@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.wl.swiprefreshandloding.ChangeActivity.PullToRefreshListDataActivity;
+import com.wl.swiprefreshandloding.ChangeActivity.SuperRefreshActivity;
 import com.wl.swiprefreshandloding.ChangeActivity.SwipRefreshLayout_RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button mSwipRefresh_RecyclerView;
+    private Button mSwipRefresh_RecyclerView,mSuperRefresh,mPullToRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         mSwipRefresh_RecyclerView = (Button) findViewById(R.id.btnOne);
         mSwipRefresh_RecyclerView.setOnClickListener(this);
+
+        mSuperRefresh = (Button) findViewById(R.id.btnThree);
+        mSuperRefresh.setOnClickListener(this);
+
+        mPullToRefresh = (Button) findViewById(R.id.btnFour);
+        mPullToRefresh.setOnClickListener(this);
     }
 
     //TODO change activity
@@ -38,11 +46,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.btnTwo:
-//                turnActivity(SwipRefreshLayout_RecyclerView.class);
                 break;
             case R.id.btnThree:
+                Toast.makeText(this,"页面跳转",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,SuperRefreshActivity.class));
                 break;
             case R.id.btnFour:
+                Toast.makeText(this,"页面跳转",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,PullToRefreshListDataActivity.class));
                 break;
         }
     }

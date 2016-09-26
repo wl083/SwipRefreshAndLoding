@@ -16,6 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ChangeActivity.SwipRefreshLayout_RecyclerView"></activity>
+        <activity android:name=".ChangeActivity.SuperRefreshActivity"></activity>
+        <activity android:name=".ChangeActivity.PullToRefreshListDataActivity"></activity>
     </application>
 
 </manifest>

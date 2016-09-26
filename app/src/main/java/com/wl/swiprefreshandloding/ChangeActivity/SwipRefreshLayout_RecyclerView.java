@@ -19,6 +19,7 @@ import java.util.List;
 
 /**
  * Created by wl on 2016/9/25.
+ * 使用SwipRefreshLayout 和 RecyclerView 刷新加载
  */
 public class SwipRefreshLayout_RecyclerView extends AppCompatActivity{
 
@@ -61,6 +62,7 @@ public class SwipRefreshLayout_RecyclerView extends AppCompatActivity{
     }
 
     private void initData() {
+        //TODO init data
         for (int i = 0; i < 50; i++) {
             data.add("当前数据为："+ i);
         }
@@ -88,7 +90,7 @@ public class SwipRefreshLayout_RecyclerView extends AppCompatActivity{
                 //
                 if (newState == RecyclerView.SCROLL_STATE_IDLE
                         && lastVisibleItem + 1 ==adapter.getItemCount()) {
-                    mSwipRefresh.setRefreshing(true);
+                    mSwipRefresh.setRefreshing(true);           //* 此处可以不写，设置不显示加载的小圆圈，即默认“自动加载”
                     data.add("新加载的第：" + count++ + "个");
 
                     adapter.notifyDataSetChanged();
